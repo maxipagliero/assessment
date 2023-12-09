@@ -1,5 +1,3 @@
-import { Model } from "survey-core";
-
 const survey = new Survey.Model(json);
 survey.applyTheme(themeJson);
 
