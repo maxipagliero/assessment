@@ -21,8 +21,41 @@ survey.onComplete.add(function (sender, options) {
     xhr.send(JSON.stringify(sender.data));
   });
   
+const storageItemKey = "my-survey";
+
+/*
+
+//This function is for saving incomplete surveys
+
+function saveSurveyData (survey) {
+    const data = survey.data;
+    data.pageNo = survey.currentPageNo;
+    window.localStorage.setItem(storageItemKey, JSON.stringify(data));
+}
+const survey = new Survey.Model(json);
+survey.applyTheme(SurveyTheme.DefaultDark);
+survey.onComplete.add((sender, options) => {
+    console.log(JSON.stringify(sender.data, null, 3));
+});
+// Save survey results to the local storage
+survey.onValueChanged.add(saveSurveyData);
+survey.onCurrentPageChanged.add(saveSurveyData);
+
+// Restore survey results
+const prevData = window.localStorage.getItem(storageItemKey) || null;
+if (prevData) {
+    const data = JSON.parse(prevData);
+    survey.data = data;
+    if (data.pageNo) {
+        survey.currentPageNo = data.pageNo;
+    }
+}
+
+// Empty the local storage after the survey is completed
+survey.onComplete.add(() => {
+    window.localStorage.setItem(storageItemKey, "");
+});
+
+*/
 
 $("#surveyElement").Survey({ model: survey });
-
-
-
