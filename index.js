@@ -32,7 +32,7 @@ function saveSurveyData (survey) {
     data.pageNo = survey.currentPageNo;
     window.localStorage.setItem(storageItemKey, JSON.stringify(data));
 }
-//const survey = new Survey.Model(json);
+const survey = new Survey.Model(json);
 //survey.applyTheme(SurveyTheme.DefaultDark);
 
 survey.onComplete.add((sender, options) => {
