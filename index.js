@@ -23,7 +23,7 @@ survey.onComplete.add(function (sender, options) {
   
 const storageItemKey = "my-survey";
 
-/*
+
 
 //This function is for saving incomplete surveys
 
@@ -56,6 +56,6 @@ survey.onComplete.add(() => {
     window.localStorage.setItem(storageItemKey, "");
 });
 
-*/
+
 
 $("#surveyElement").Survey({ model: survey });
