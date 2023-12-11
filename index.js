@@ -1,3 +1,11 @@
+const storageItemKey = "my-survey";
+
+function saveSurveyData (survey) {
+  const data = survey.data;
+  data.pageNo = survey.currentPageNo;
+  window.localStorage.setItem(storageItemKey, JSON.stringify(data));
+}
+
 const survey = new Survey.Model(json);
 survey.applyTheme(themeJson);
 
@@ -21,15 +29,6 @@ survey.onComplete.add(function (sender, options) {
     xhr.send(JSON.stringify(sender.data));
   });
 
-
-const storageItemKey = "my-survey";
-
-function saveSurveyData (survey) {
-  const data = survey.data;
-  data.pageNo = survey.currentPageNo;
-  window.localStorage.setItem(storageItemKey, JSON.stringify(data));
-}
-
 // Save survey results to the local storage
 survey.onValueChanged.add(saveSurveyData);
 survey.onCurrentPageChanged.add(saveSurveyData);
@@ -48,6 +47,5 @@ if (prevData) {
 survey.onComplete.add(() => {
   window.localStorage.setItem(storageItemKey, "");
 });
-
 
 $("#surveyElement").Survey({ model: survey });
