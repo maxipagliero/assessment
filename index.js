@@ -1,3 +1,5 @@
+import { Model } from "survey-core";
+
 const storageItemKey = "my-survey";
 
 function saveSurveyData (survey) {
